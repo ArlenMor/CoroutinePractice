@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 559827466}
   - component: {fileID: 559827465}
   - component: {fileID: 559827464}
-  - component: {fileID: 559827467}
   m_Layer: 5
   m_Name: Pause
   m_TagString: Untagged
@@ -205,19 +204,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 559827465}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 559827467}
-        m_TargetAssemblyTypeName: ButtonPause, Assembly-CSharp
-        m_MethodName: OnClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &559827465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,18 +243,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 559827462}
   m_CullTransparentMesh: 1
---- !u!114 &559827467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 559827462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1465093745d39ed4c96d73a2511a7394, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &566797596
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,8 +614,6 @@ GameObject:
   - component: {fileID: 1532531929}
   - component: {fileID: 1532531928}
   - component: {fileID: 1532531927}
-  - component: {fileID: 1532531932}
-  - component: {fileID: 1532531931}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -693,9 +666,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 829984ba3737da64686eb374ab201286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playBotton: {fileID: 1623971118}
-  _pauseBotton: {fileID: 559827467}
-  _pause: 0.5
+  _playBotton: {fileID: 1623971119}
+  _pauseBotton: {fileID: 559827464}
+  _delaySerialize: 0.5
   _increaseValue: 1
 --- !u!114 &1532531929
 MonoBehaviour:
@@ -794,30 +767,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1532531925}
   m_CullTransparentMesh: 1
---- !u!114 &1532531931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1532531925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1465093745d39ed4c96d73a2511a7394, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1532531932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1532531925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98cd9a1acbc59a840bd29550b77d2ae3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1623971117
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,7 +779,6 @@ GameObject:
   - component: {fileID: 1623971121}
   - component: {fileID: 1623971120}
   - component: {fileID: 1623971119}
-  - component: {fileID: 1623971118}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -838,18 +786,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1623971118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1623971117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98cd9a1acbc59a840bd29550b77d2ae3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1623971119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -893,19 +829,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1623971120}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1623971118}
-        m_TargetAssemblyTypeName: ButtonPlay, Assembly-CSharp
-        m_MethodName: OnClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1623971120
 MonoBehaviour:
   m_ObjectHideFlags: 0

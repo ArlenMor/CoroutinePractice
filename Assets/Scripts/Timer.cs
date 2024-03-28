@@ -1,13 +1,14 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] private ButtonPlay _playBotton;
-    [SerializeField] private ButtonPause _pauseBotton;
-    [SerializeField, Min(0.5f)] private float _pause;
-    [SerializeField, Min(1)] private float _increaseValue;
+    [SerializeField] private Button _playBotton;
+    [SerializeField] private Button _pauseBotton;
+    [SerializeField, Min(0.5f)] private float _delaySerialize = 0.5f;
+    [SerializeField, Min(1)] private float _increaseValue = 1;
 
     private float _value = 0;
 
@@ -19,19 +20,19 @@ public class Timer : MonoBehaviour
 
     private void Awake()
     {
-        _delay = new WaitForSeconds(_pause);
+        _delay = new WaitForSeconds(_delaySerialize);
     }
 
     private void OnEnable()
     {
-        _playBotton.TimerStarted += StartRunning;
-        _pauseBotton.TimerPaused += StopRunning;
+        _playBotton.onClick.AddListener(StartRunning);
+        _pauseBotton.onClick.AddListener(StopRunning);
     }
 
     private void OnDisable()
     {
-        _playBotton.TimerStarted -= StartRunning;
-        _pauseBotton.TimerPaused -= StopRunning;
+        _playBotton.onClick.RemoveListener(StartRunning);
+        _pauseBotton.onClick.RemoveListener(StopRunning);
     }
 
     private void StartRunning()
@@ -47,7 +48,7 @@ public class Timer : MonoBehaviour
 
     private IEnumerator IncreaseTime()
     {
-        while(true)
+        while(enabled)
         {
             yield return _delay;
             _value += _increaseValue;
